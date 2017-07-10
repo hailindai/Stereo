@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hot">热门</string>
+    <string name="selection">精品</string>
+    <string name="me">我的</string>
+</resources>

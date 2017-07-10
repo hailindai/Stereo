@@ -10,11 +10,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.dreamguard.stereo.ui.fragment.MyFragment;
 import com.dreamguard.stereo.ui.fragment.NewsFragment;
 import com.dreamguard.stereo.ui.fragment.SelectionFragment;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by hailin on 17-7-7.
@@ -31,20 +35,23 @@ public class HomeActivity extends AppCompatActivity {
 
     private Fragment currentFragment;
 
+    @BindView(R.id.title)
+    TextView mTitle;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    switchFragment(newsFragment,"news");
+                case R.id.navigation_hot:
+                    switchFragment(newsFragment,R.string.hot);
                     return true;
-                case R.id.navigation_dashboard:
-                    switchFragment(selectionFragment,"selection");
+                case R.id.navigation_selection:
+                    switchFragment(selectionFragment,R.string.selection);
                     return true;
-                case R.id.navigation_notifications:
-                    switchFragment(myFragment,"my");
+                case R.id.navigation_me:
+                    switchFragment(myFragment,R.string.me);
                     return true;
             }
             return false;
@@ -55,7 +62,9 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -64,16 +73,14 @@ public class HomeActivity extends AppCompatActivity {
         selectionFragment = new SelectionFragment();
         myFragment = new MyFragment();
 
-        switchFragment(newsFragment,"news");
+        switchFragment(newsFragment,R.string.hot);
     }
 
-    private void switchFragment(Fragment fragment, String title) {
+    private void switchFragment(Fragment fragment, int title) {
 
         if (currentFragment == null || !currentFragment.getClass().getName().equals(fragment.getClass().getName())) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
-            ActionBar actionBar = getSupportActionBar();
-            assert actionBar != null;
-            actionBar.setTitle(title);
+            mTitle.setText(title);
         }
     }
 

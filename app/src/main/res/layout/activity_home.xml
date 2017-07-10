@@ -8,6 +8,25 @@
     android:orientation="vertical"
     tools:context="com.dreamguard.stereo.HomeActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:visibility="visible"
+        app:layout_collapseMode="pin"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="设置"
+            android:layout_gravity ="center"
+            />
+    </android.support.v7.widget.Toolbar>
+
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
