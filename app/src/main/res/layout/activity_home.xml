@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.dreamguard.stereo.HomeActivity">
+    tools:context="com.dreamguard.stereo.ui.activity.HomeActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,14 +15,14 @@
         android:visibility="visible"
         app:layout_collapseMode="pin"
         android:background="?attr/colorPrimary"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        app:theme="@style/AppTheme.PopupOverlay">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:text="设置"
+            android:text="@string/set"
             android:layout_gravity ="center"
             />
     </android.support.v7.widget.Toolbar>

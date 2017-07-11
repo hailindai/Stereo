@@ -3,4 +3,8 @@
     <string name="hot">热门</string>
     <string name="selection">精品</string>
     <string name="me">我的</string>
+    <string name="error">错误</string>
+
+    <string name="set">设置</string>
+    <string name="detail_tab">详情页</string>
 </resources>

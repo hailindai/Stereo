@@ -1,6 +1,7 @@
 package com.dreamguard.stereo.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.dreamguard.stereo.R;
 import com.dreamguard.stereo.bean.weixin.WeixinNews;
+import com.dreamguard.stereo.ui.activity.NewsActivity;
 
 import java.util.ArrayList;
 
@@ -54,12 +56,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.WeixinViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                holder.tvTitle.setTextColor(Color.GRAY);
-//                Intent intent = new Intent(mContext, WeixinNewsActivity.class);
-//                intent.putExtra("url", weixinNews.getUrl());
-//                intent.putExtra("title", weixinNews.getTitle());
-//                mContext.startActivity(intent);
-
+                Intent intent = new Intent(mContext, NewsActivity.class);
+                intent.putExtra("url", weixinNews.getUrl());
+                intent.putExtra("title", weixinNews.getTitle());
+                mContext.startActivity(intent);
             }
         });
     }

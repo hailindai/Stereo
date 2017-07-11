@@ -1,18 +1,15 @@
-package com.dreamguard.stereo;
+package com.dreamguard.stereo.ui.activity;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Slide;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.dreamguard.stereo.R;
 import com.dreamguard.stereo.ui.fragment.MyFragment;
 import com.dreamguard.stereo.ui.fragment.NewsFragment;
 import com.dreamguard.stereo.ui.fragment.SelectionFragment;
